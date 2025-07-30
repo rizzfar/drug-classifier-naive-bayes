@@ -40,7 +40,7 @@ def calculate_prior(data, alpha):
     class_counts = data["ClassDrug"].value_counts().to_dict()
     total = len(data)
     return {
-        cls: (count + alpha) / (total + alpha * len(class_counts))
+        cls: count / total
         for cls, count in class_counts.items()
     }
 
